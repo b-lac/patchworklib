@@ -416,9 +416,6 @@ def load_ggplot(ggplot=None, figsize=None):
         ggplot._draw_watermarks()
         ggplot._apply_theme()
 
-    else:
-        raise ValueError("patchworklib does not support plotnine {}".format(plotnine_version))
-
     if len(ggplot.axs) == 1: 
         ax = Brick(ax=ggplot.axs[0])
         if "_ggplot_legend" in ax.__dict__:
