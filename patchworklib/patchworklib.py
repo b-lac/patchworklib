@@ -402,7 +402,7 @@ def load_ggplot(ggplot=None, figsize=None):
     ggplot._resize_panels()
     
     #Drawing
-    if plotnine_version >= parse_version("0.9.0"): 
+    if plotnine_version >= parse_version("0.10.0"): 
         for i, l in enumerate(ggplot.layers, start=1):
             l.zorder = i + 10
             l.draw(ggplot.layout, ggplot.coordinates)
@@ -416,16 +416,13 @@ def load_ggplot(ggplot=None, figsize=None):
         ggplot._draw_watermarks()
         ggplot._apply_theme()
 
-    else:
-        raise ValueError("patchworklib does not support plotnine {}".format(plotnine_version))
-
     if len(ggplot.axs) == 1: 
         ax = Brick(ax=ggplot.axs[0])
         if "_ggplot_legend" in ax.__dict__:
             ax._ggplot_legend = None #For Google colab... 
         ax.change_aspectratio((figsize[0], figsize[1])) 
         
-        if plotnine_version >= parse_version("0.9.0"): 
+        if plotnine_version >= parse_version("0.10.0"): 
             draw_labels(ax, ggplot, gcp) 
             draw_legend(ax, ggplot, gcp, figsize)
             draw_title(ax,  ggplot, gcp, figsize)
@@ -456,12 +453,12 @@ def load_ggplot(ggplot=None, figsize=None):
         bricks = Bricks(bricks_dict=bricks_dict) 
         bricks = expand(bricks, width, height)        
         
-        if "0.9" in plotnine_version:
+        if plotnine_version >= parse_version("0.10.0"): 
             draw_labels(bricks, ggplot, gcp) 
             draw_legend(bricks, ggplot, gcp, figsize)
             draw_title(bricks,  ggplot, gcp, figsize)
         
-        elif "0.8" in plotnine_version:
+        elif plotnine_version >= parse_version("0.8.0"):
             draw_labels(bricks, ggplot, gcp) 
             draw_legend(bricks, ggplot, gcp, figsize)
             draw_title(bricks,  ggplot, gcp, figsize)
