@@ -7,10 +7,10 @@ DESCRIPTION      = "patchwork for matplotlib"
 DISTNAME         = 'patchworklib'
 MAINTAINER       = 'Hideto Mori'
 MAINTAINER_EMAIL = 'hidto7592@gmail.com'
-URL              = 'https://github.com/ponnhide/patchworklib'
+URL              = 'https://github.com/b-lab/patchworklib'
 LICENSE          = 'GNU General Public License v3.0'
-DOWNLOAD_URL     = 'https://github.com/ponnhide/patchworklib'
-VERSION          = '0.4.7'
+DOWNLOAD_URL     = 'https://github.com/b-lab/patchworklib'
+VERSION          = '0.4.8'
 PYTHON_REQUIRES  = ">=3.7"
 
 INSTALL_REQUIRES = [
