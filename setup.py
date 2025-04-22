@@ -3,46 +3,46 @@
 # Copyright (C) Hideto Mori
 
 
-DESCRIPTION      = "patchwork for matplotlib"
-DISTNAME         = 'patchworklib'
-MAINTAINER       = 'Hideto Mori'
-MAINTAINER_EMAIL = 'hidto7592@gmail.com'
-URL              = 'https://github.com/ponnhide/patchworklib'
-LICENSE          = 'GNU General Public License v3.0'
-DOWNLOAD_URL     = 'https://github.com/ponnhide/patchworklib'
-VERSION          = '0.6.5'
-PYTHON_REQUIRES  = ">=3.7"
+DESCRIPTION = "patchwork for matplotlib"
+DISTNAME = "patchworklib"
+MAINTAINER = "Hideto Mori"
+MAINTAINER_EMAIL = "hidto7592@gmail.com"
+URL = "https://github.com/ponnhide/patchworklib"
+LICENSE = "GNU General Public License v3.0"
+DOWNLOAD_URL = "https://github.com/ponnhide/patchworklib"
+VERSION = "0.6.5"
+PYTHON_REQUIRES = ">=3.7"
 
 INSTALL_REQUIRES = [
-    'matplotlib>=3.4',
-    'pandas>=0.24',
-    'numpy>=1.16,<1.27',
-    'dill',
-    'seaborn',
-    'plotnine<=0.13.6',
+    "matplotlib>=3.4",
+    "pandas>=0.24",
+    "numpy>=1.16",
+    "dill",
+    "seaborn",
+    "plotnine<=0.13.6",
 ]
 
-PACKAGES = [
-    'patchworklib'
-]
+PACKAGES = ["patchworklib"]
 
 CLASSIFIERS = [
-    'Intended Audience :: Science/Research',
-    'Programming Language :: Python :: 3.7',
-    'Programming Language :: Python :: 3.8',
-    'Programming Language :: Python :: 3.9',
-    'Programming Language :: Python :: 3.10',
-    'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
 ]
 
-with open('README.md', 'r', encoding='utf-8') as fp:
+with open("README.md", "r", encoding="utf-8") as fp:
     readme = fp.read()
 LONG_DESCRIPTION = readme
-LONG_DESCRIPTION_CONTENT_TYPE = 'text/markdown'
+LONG_DESCRIPTION_CONTENT_TYPE = "text/markdown"
 
 if __name__ == "__main__":
-    from setuptools import setup
     import sys
+
+    from setuptools import setup
+
     if sys.version_info[:2] < (3, 7):
         raise RuntimeError("patchworklib requires python >= 3.7.")
 
@@ -62,5 +62,5 @@ if __name__ == "__main__":
         python_requires=PYTHON_REQUIRES,
         install_requires=INSTALL_REQUIRES,
         packages=PACKAGES,
-        classifiers=CLASSIFIERS
+        classifiers=CLASSIFIERS,
     )
